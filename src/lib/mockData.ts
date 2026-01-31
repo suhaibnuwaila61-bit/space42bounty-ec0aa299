@@ -8,6 +8,7 @@ export interface Job {
   posted: string;
   description: string;
   requirements: string[];
+  businessUnit: 'Space Services' | 'Smart Solutions';
 }
 
 export interface Candidate {
@@ -29,6 +30,8 @@ export interface Candidate {
     explanation: string;
     strengths: string[];
     areasToImprove: string[];
+    missionMapping?: string;
+    recommendedUnit?: 'Space Services' | 'Smart Solutions';
   };
   writtenResponses: {
     question: string;
@@ -41,81 +44,85 @@ export interface Candidate {
 export const jobs: Job[] = [
   {
     id: '1',
-    title: 'Senior Frontend Developer',
-    department: 'Engineering',
-    location: 'Remote',
+    title: 'Satellite Operations Engineer',
+    department: 'Space Services',
+    location: 'Abu Dhabi, UAE',
     type: 'Full-time',
-    salary: '$120,000 - $160,000',
+    salary: 'Competitive',
     posted: '2 days ago',
-    description: 'We are looking for a Senior Frontend Developer to join our growing team. You will be responsible for building and maintaining our web applications using React and TypeScript.',
+    description: 'Join Space42\'s Space Services unit to operate and maintain our growing satellite constellation. You will be responsible for mission planning, satellite health monitoring, and coordination with ground stations.',
     requirements: [
-      '5+ years of experience with React',
-      'Strong TypeScript skills',
-      'Experience with state management (Redux, Zustand)',
+      '5+ years of experience in satellite operations',
+      'Strong understanding of orbital mechanics',
+      'Experience with satellite telemetry systems',
       'Excellent communication skills',
-      'Experience with testing frameworks'
-    ]
+      'Bachelor\'s degree in Aerospace Engineering or related field'
+    ],
+    businessUnit: 'Space Services'
   },
   {
     id: '2',
-    title: 'Product Manager',
-    department: 'Product',
-    location: 'New York, NY',
+    title: 'Geospatial Analyst',
+    department: 'Smart Solutions',
+    location: 'Abu Dhabi, UAE',
     type: 'Full-time',
-    salary: '$130,000 - $170,000',
+    salary: 'Competitive',
     posted: '1 week ago',
-    description: 'Join our product team to help shape the future of our platform. You will work closely with engineering, design, and stakeholders to deliver impactful features.',
+    description: 'Be part of our Smart Solutions team analyzing satellite imagery and geospatial data to deliver actionable insights for government and enterprise clients.',
     requirements: [
-      '3+ years of product management experience',
-      'Strong analytical skills',
-      'Excellent written and verbal communication',
-      'Experience with agile methodologies',
-      'Technical background preferred'
-    ]
+      '3+ years of geospatial analysis experience',
+      'Proficiency in GIS tools (ArcGIS, QGIS)',
+      'Experience with satellite imagery interpretation',
+      'Strong analytical and problem-solving skills',
+      'Knowledge of remote sensing technologies'
+    ],
+    businessUnit: 'Smart Solutions'
   },
   {
     id: '3',
-    title: 'UX Designer',
-    department: 'Design',
-    location: 'San Francisco, CA',
+    title: 'SatCom Systems Specialist',
+    department: 'Space Services',
+    location: 'Abu Dhabi, UAE',
     type: 'Full-time',
-    salary: '$100,000 - $140,000',
+    salary: 'Competitive',
     posted: '3 days ago',
-    description: 'We need a talented UX Designer to create intuitive and beautiful user experiences for our products.',
+    description: 'Lead the development and optimization of satellite communication systems. Work with cutting-edge technology from our Yahsat heritage.',
     requirements: [
-      '4+ years of UX design experience',
-      'Proficiency in Figma',
-      'Strong portfolio demonstrating user-centered design',
-      'Experience with user research',
-      'Excellent collaboration skills'
-    ]
+      '4+ years in satellite communications',
+      'Experience with Ka-band and L-band systems',
+      'Understanding of link budget analysis',
+      'Strong technical documentation skills',
+      'Excellent collaboration abilities'
+    ],
+    businessUnit: 'Space Services'
   },
   {
     id: '4',
-    title: 'Customer Success Manager',
-    department: 'Customer Success',
-    location: 'London, UK',
+    title: 'AI/ML Engineer - Earth Observation',
+    department: 'Smart Solutions',
+    location: 'Abu Dhabi, UAE',
     type: 'Full-time',
-    salary: '£60,000 - £80,000',
+    salary: 'Competitive',
     posted: '5 days ago',
-    description: 'Help our customers succeed by providing exceptional support and guidance throughout their journey with our platform.',
+    description: 'Apply machine learning to satellite imagery for automated feature extraction, change detection, and predictive analytics in our Smart Solutions division.',
     requirements: [
-      '3+ years in customer success or account management',
-      'Excellent communication skills',
-      'Problem-solving mindset',
-      'Experience with SaaS products',
-      'Strong relationship-building abilities'
-    ]
+      '3+ years in machine learning/AI',
+      'Experience with computer vision',
+      'Python proficiency (TensorFlow, PyTorch)',
+      'Knowledge of remote sensing data',
+      'Strong problem-solving mindset'
+    ],
+    businessUnit: 'Smart Solutions'
   }
 ];
 
 export const candidates: Candidate[] = [
   {
     id: '1',
-    name: 'Sarah Chen',
-    email: 'sarah.chen@email.com',
-    phone: '+1 (555) 123-4567',
-    appliedFor: 'Senior Frontend Developer',
+    name: 'Fatima Al-Rashid',
+    email: 'fatima.rashid@email.com',
+    phone: '+971 50 123 4567',
+    appliedFor: 'Satellite Operations Engineer',
     appliedDate: '2024-01-15',
     communicationScore: 'high',
     overallScore: 92,
@@ -125,33 +132,35 @@ export const candidates: Candidate[] = [
       grammar: 92,
       confidence: 90,
       vocabulary: 88,
-      explanation: 'Sarah demonstrates exceptional communication skills with clear articulation and professional vocabulary. Her responses show strong analytical thinking and the ability to explain complex technical concepts in accessible terms.',
+      explanation: 'Fatima demonstrates exceptional communication skills with clear articulation and professional vocabulary. Her responses show strong analytical thinking and deep understanding of satellite operations.',
+      missionMapping: 'Based on your extensive satellite operations background and mission planning expertise, you are an excellent fit for our Space Services unit. Your experience with LEO constellations aligns perfectly with Space42\'s expanding satellite infrastructure.',
+      recommendedUnit: 'Space Services',
       strengths: [
         'Clear and structured communication',
-        'Strong technical vocabulary',
+        'Strong technical vocabulary in aerospace',
         'Confident delivery with natural pacing',
         'Excellent problem-solving narrative'
       ],
       areasToImprove: [
-        'Could provide more specific examples',
-        'Slight hesitation on complex questions'
+        'Could provide more specific mission examples',
+        'Slight hesitation on complex orbital scenarios'
       ]
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'With 6 years of experience in frontend development, I have led multiple React projects from conception to production. I am passionate about creating intuitive user experiences and have a track record of mentoring junior developers while maintaining high code quality standards.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'With 6 years of experience in satellite operations at leading space agencies, I have led multiple mission control teams. I am passionate about the UAE\'s space ambitions and excited about Space42\'s vision of becoming a global space-tech leader.'
       }
     ],
-    voiceTranscript: 'One of my most challenging work experiences was when we had to migrate a legacy application to a modern React architecture within a tight deadline. I led the technical planning, created a phased migration strategy, and coordinated with stakeholders to ensure minimal disruption. We completed the project two weeks ahead of schedule.',
-    avatar: 'SC'
+    voiceTranscript: 'One of my most challenging experiences was during a critical satellite maneuver when we detected an anomaly in the attitude control system. I led the team through a systematic troubleshooting process, coordinated with ground stations across three continents, and successfully stabilized the satellite.',
+    avatar: 'FA'
   },
   {
     id: '2',
-    name: 'Michael Rodriguez',
-    email: 'michael.r@email.com',
-    phone: '+1 (555) 234-5678',
-    appliedFor: 'Senior Frontend Developer',
+    name: 'Omar Hassan',
+    email: 'omar.h@email.com',
+    phone: '+971 50 234 5678',
+    appliedFor: 'Geospatial Analyst',
     appliedDate: '2024-01-14',
     communicationScore: 'medium',
     overallScore: 74,
@@ -161,11 +170,13 @@ export const candidates: Candidate[] = [
       grammar: 78,
       confidence: 70,
       vocabulary: 75,
-      explanation: 'Michael shows solid technical understanding but could improve on articulating his thoughts more concisely. His responses are generally clear but occasionally include filler words and some grammatical inconsistencies.',
+      explanation: 'Omar shows solid technical understanding of geospatial analysis but could improve on articulating his thoughts more concisely. His responses demonstrate practical experience with GIS tools.',
+      missionMapping: 'Your geospatial analysis skills and experience with satellite imagery make you a good candidate for our Smart Solutions unit. With some communication refinement, you could contribute effectively to our data analytics projects.',
+      recommendedUnit: 'Smart Solutions',
       strengths: [
-        'Good technical knowledge',
-        'Enthusiastic and engaged',
-        'Honest about limitations'
+        'Good technical knowledge of GIS',
+        'Enthusiastic about the field',
+        'Practical project experience'
       ],
       areasToImprove: [
         'Reduce use of filler words',
@@ -175,19 +186,19 @@ export const candidates: Candidate[] = [
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'I have been working with React for 4 years and really enjoy building user interfaces. I learn quickly and am excited about the opportunity to work on challenging projects with a great team.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'I have been working with satellite imagery for 4 years and really enjoy extracting insights from geospatial data. I am excited about joining a company that combines space technology with smart analytics.'
       }
     ],
-    voiceTranscript: 'So, um, I had this project where we needed to, you know, improve the performance of our dashboard. I, uh, analyzed the component rendering and implemented memoization which, like, improved load times by about 40 percent.',
-    avatar: 'MR'
+    voiceTranscript: 'So, um, I had this project where we needed to, you know, analyze urban growth patterns using multi-temporal satellite imagery. I, uh, processed the data and created change detection maps which helped city planners understand development trends.',
+    avatar: 'OH'
   },
   {
     id: '3',
-    name: 'Emily Watson',
-    email: 'emily.watson@email.com',
-    phone: '+1 (555) 345-6789',
-    appliedFor: 'Product Manager',
+    name: 'Sara Ahmed',
+    email: 'sara.ahmed@email.com',
+    phone: '+971 50 345 6789',
+    appliedFor: 'SatCom Systems Specialist',
     appliedDate: '2024-01-13',
     communicationScore: 'high',
     overallScore: 88,
@@ -197,33 +208,35 @@ export const candidates: Candidate[] = [
       grammar: 92,
       confidence: 85,
       vocabulary: 86,
-      explanation: 'Emily demonstrates strong communication abilities with a clear, professional tone. She effectively conveys complex product concepts and shows excellent stakeholder communication skills.',
+      explanation: 'Sara demonstrates strong communication abilities with a clear, professional tone. She effectively conveys complex satellite communication concepts and shows excellent technical depth.',
+      missionMapping: 'Your deep expertise in satellite communications and Ka-band systems makes you an ideal fit for our Space Services unit. Your experience from Yahsat-heritage projects would be directly applicable to Space42\'s SATCOM operations.',
+      recommendedUnit: 'Space Services',
       strengths: [
-        'Excellent narrative structure',
+        'Excellent technical articulation',
         'Professional tone',
-        'Data-driven communication',
+        'Strong SATCOM domain knowledge',
         'Clear strategic thinking'
       ],
       areasToImprove: [
         'Could be more assertive in delivery',
-        'Sometimes over-explains concepts'
+        'Sometimes over-explains technical concepts'
       ]
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'As a product manager with 5 years of experience in B2B SaaS, I have successfully launched 12 major features that increased user engagement by 45%. I excel at translating business requirements into actionable roadmaps and fostering cross-functional collaboration.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'As a SATCOM specialist with 5 years at a leading telecommunications company, I have worked on Ka-band and L-band systems serving maritime and aviation sectors. I am drawn to Space42\'s mission of connecting the unconnected.'
       }
     ],
-    voiceTranscript: 'In my previous role, I identified a significant gap in our onboarding process that was causing a 30% drop-off rate. I conducted user interviews, analyzed the data, and proposed a redesigned flow. After implementation, we saw drop-off reduce to 12% within three months.',
-    avatar: 'EW'
+    voiceTranscript: 'In my previous role, I identified a significant signal degradation issue affecting our maritime customers. I conducted a thorough link budget analysis, identified the root cause in the ground segment, and implemented a solution that improved service availability by 15%.',
+    avatar: 'SA'
   },
   {
     id: '4',
-    name: 'James Kim',
-    email: 'james.kim@email.com',
-    phone: '+1 (555) 456-7890',
-    appliedFor: 'UX Designer',
+    name: 'Khalid Mohammed',
+    email: 'khalid.m@email.com',
+    phone: '+971 50 456 7890',
+    appliedFor: 'AI/ML Engineer - Earth Observation',
     appliedDate: '2024-01-12',
     communicationScore: 'medium',
     overallScore: 71,
@@ -233,33 +246,35 @@ export const candidates: Candidate[] = [
       grammar: 70,
       confidence: 68,
       vocabulary: 72,
-      explanation: 'James has creative ideas but needs to work on delivering them more confidently. His grammar is generally good with some minor inconsistencies. He shows potential but could benefit from more structured communication.',
+      explanation: 'Khalid has innovative ideas in ML for remote sensing but needs to work on delivering them more confidently. He shows potential but could benefit from more structured communication.',
+      missionMapping: 'Your machine learning skills and interest in satellite imagery analysis align well with our Smart Solutions unit. With enhanced communication confidence, you could contribute significantly to our AI-driven analytics products.',
+      recommendedUnit: 'Smart Solutions',
       strengths: [
-        'Creative thinking evident',
-        'Good visual communication references',
-        'Passionate about design'
+        'Creative ML approaches evident',
+        'Good understanding of remote sensing',
+        'Passionate about AI applications'
       ],
       areasToImprove: [
         'Build more confidence in delivery',
-        'Provide more concrete examples',
+        'Provide more concrete project examples',
         'Improve response structure'
       ]
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'I love creating designs that solve real problems. I have experience with user research and have designed apps that people actually enjoy using. I am always learning new design trends and tools.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'I love applying machine learning to solve real-world problems using satellite data. I have built models for land cover classification and object detection. Space42\'s focus on smart solutions excites me.'
       }
     ],
-    voiceTranscript: 'I worked on this mobile app redesign where, um, the existing interface was pretty confusing for users. I did some user testing and found the main pain points, then created a new design that was much simpler. Users really liked it.',
-    avatar: 'JK'
+    voiceTranscript: 'I worked on this project where, um, we used deep learning to detect changes in agricultural areas from satellite images. I trained a U-Net model and, um, achieved good accuracy in identifying crop stress.',
+    avatar: 'KM'
   },
   {
     id: '5',
-    name: 'Anna Martinez',
-    email: 'anna.m@email.com',
-    phone: '+1 (555) 567-8901',
-    appliedFor: 'Customer Success Manager',
+    name: 'Mariam Al-Zaabi',
+    email: 'mariam.z@email.com',
+    phone: '+971 50 567 8901',
+    appliedFor: 'Geospatial Analyst',
     appliedDate: '2024-01-11',
     communicationScore: 'high',
     overallScore: 95,
@@ -269,32 +284,34 @@ export const candidates: Candidate[] = [
       grammar: 95,
       confidence: 94,
       vocabulary: 92,
-      explanation: 'Anna exhibits outstanding communication skills perfectly suited for a customer-facing role. Her responses are warm, professional, and demonstrate excellent empathy and problem-solving abilities.',
+      explanation: 'Mariam exhibits outstanding communication skills perfectly suited for client-facing geospatial consulting. Her responses are warm, professional, and demonstrate excellent domain expertise.',
+      missionMapping: 'Your exceptional geospatial expertise combined with your outstanding communication skills makes you a perfect fit for our Smart Solutions unit. You would excel in client-facing roles, translating satellite data insights for government and enterprise stakeholders.',
+      recommendedUnit: 'Smart Solutions',
       strengths: [
         'Exceptional verbal fluency',
-        'Warm and empathetic tone',
-        'Excellent active listening indicators',
-        'Professional and confident'
+        'Warm and professional tone',
+        'Deep geospatial domain knowledge',
+        'Excellent stakeholder communication'
       ],
       areasToImprove: [
-        'Could incorporate more industry-specific terminology'
+        'Could incorporate more technical depth in explanations'
       ]
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'With 4 years in customer success, I have maintained a 98% customer retention rate and consistently receive top satisfaction scores. I believe in building genuine relationships with clients and proactively identifying opportunities to help them achieve their goals.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'With 4 years in geospatial consulting, I have delivered insights to government clients across the GCC. I believe in making complex spatial data accessible and actionable. Space42\'s merger of Bayanat and Yahsat creates exciting opportunities.'
       }
     ],
-    voiceTranscript: 'I once had a client who was considering churning due to implementation challenges. I scheduled a call to understand their concerns, worked with our technical team to create a custom solution, and personally guided them through the process. They not only stayed but became one of our biggest advocates.',
-    avatar: 'AM'
+    voiceTranscript: 'I worked with a government client who needed to monitor coastal development. I designed a multi-temporal analysis workflow using high-resolution satellite imagery, presented findings to senior stakeholders, and our recommendations were incorporated into their urban planning policies.',
+    avatar: 'MA'
   },
   {
     id: '6',
-    name: 'David Thompson',
-    email: 'david.t@email.com',
-    phone: '+1 (555) 678-9012',
-    appliedFor: 'Senior Frontend Developer',
+    name: 'Ahmed Al-Dhaheri',
+    email: 'ahmed.d@email.com',
+    phone: '+971 50 678 9012',
+    appliedFor: 'Satellite Operations Engineer',
     appliedDate: '2024-01-10',
     communicationScore: 'low',
     overallScore: 52,
@@ -304,10 +321,11 @@ export const candidates: Candidate[] = [
       grammar: 50,
       confidence: 48,
       vocabulary: 55,
-      explanation: 'David shows technical potential but struggles with clear communication. His responses contain frequent grammatical errors and lack structure. Significant improvement needed in verbal communication for a senior role.',
+      explanation: 'Ahmed shows technical potential but struggles with clear communication. His responses contain frequent grammatical errors and lack structure. Significant improvement needed in verbal communication for a senior operations role.',
+      missionMapping: 'While your technical background shows promise, we recommend strengthening your communication skills before applying for senior operations roles. Consider our graduate training program as an alternative entry path.',
       strengths: [
         'Shows technical enthusiasm',
-        'Willing to learn'
+        'Willingness to learn'
       ],
       areasToImprove: [
         'Improve grammatical accuracy',
@@ -318,19 +336,86 @@ export const candidates: Candidate[] = [
     },
     writtenResponses: [
       {
-        question: 'Why are you a good fit for this role?',
-        answer: 'I am good at coding and have done many projects. React is my favorite and I can make websites. Looking for new opportunity to grow.'
+        question: 'Why are you a good fit for Space42?',
+        answer: 'I am good at satellite systems and have done some projects. Space is my favorite topic and I can learn fast. Looking for opportunity to grow in UAE space industry.'
       }
     ],
-    voiceTranscript: 'Um... so... I was working on this... project... where we had to... um... fix some bugs in the code. It was... uh... challenging but I... managed to... you know... solve it eventually.',
-    avatar: 'DT'
+    voiceTranscript: 'Um... so... I was working on this... satellite project... where we had to... um... track the orbit. It was... uh... interesting but I... managed to... you know... complete the task eventually.',
+    avatar: 'AD'
   }
 ];
 
 export const applicationQuestions = [
-  'Why are you a good fit for this role?',
-  'Describe a challenging project you worked on and how you overcame obstacles.',
-  'What are your career goals for the next 3-5 years?'
+  'Why are you a good fit for Space42?',
+  'Describe a challenging technical problem you solved and what you learned from the experience.',
+  'How do you see yourself contributing to the UAE\'s space and technology ambitions?'
 ];
 
 export const voicePrompt = 'Please describe a work challenge you solved and what you learned from the experience. Speak naturally for 30-60 seconds.';
+
+// Space42 Company Information for AI Assistant
+export const space42Info = {
+  overview: 'Space42 is a UAE-based AI-powered SpaceTech company formed from the merger of Bayanat (geospatial analytics leader) and Yahsat (satellite communications pioneer). We are headquartered in Abu Dhabi.',
+  
+  businessUnits: {
+    spaceServices: {
+      name: 'Space Services',
+      description: 'Operates satellite communications, mobility solutions, and managed services. Leverages Yahsat\'s heritage in satellite operations.',
+      keyAreas: ['Satellite Communications', 'Maritime & Aviation Connectivity', 'Government Communications', 'Broadband Services']
+    },
+    smartSolutions: {
+      name: 'Smart Solutions',
+      description: 'Delivers AI-powered geospatial analytics and smart city solutions. Built on Bayanat\'s expertise in data analytics.',
+      keyAreas: ['Geospatial Analytics', 'Earth Observation', 'AI/ML for Satellite Data', 'Smart City Solutions']
+    }
+  },
+  
+  locations: {
+    headquarters: 'Abu Dhabi, UAE - Masdar City',
+    offices: ['Al Yah Satellite Communications Company building in Abu Dhabi']
+  },
+  
+  culture: {
+    dressCode: 'Business casual is the norm. Smart attire for client meetings.',
+    workHours: 'Sunday to Thursday, 8:00 AM to 5:00 PM (UAE Standard Time)',
+    values: ['Innovation', 'Excellence', 'Integrity', 'Collaboration', 'UAE Vision']
+  }
+};
+
+export const onboardingChecklist = [
+  {
+    id: 'badge',
+    title: 'Collect Your Security Badge',
+    description: 'Visit the Security Office on the ground floor with your ID to collect your access badge.',
+    location: 'Ground Floor, Security Office',
+    completed: false
+  },
+  {
+    id: 'laptop',
+    title: 'Set Up Your Workstation',
+    description: 'IT will provide your laptop and help you set up email, VPN, and required software.',
+    location: 'IT Help Desk, Floor 2',
+    completed: false
+  },
+  {
+    id: 'team',
+    title: 'Meet Your Team',
+    description: 'Your manager will introduce you to your team members and show you around the office.',
+    location: 'Your Department Area',
+    completed: false
+  },
+  {
+    id: 'hr',
+    title: 'Complete HR Paperwork',
+    description: 'Finalize any remaining documentation with the HR team.',
+    location: 'HR Office, Floor 3',
+    completed: false
+  },
+  {
+    id: 'orientation',
+    title: 'Attend New Hire Orientation',
+    description: 'Learn about Space42\'s mission, values, and policies in the welcome session.',
+    location: 'Conference Room A, Floor 1',
+    completed: false
+  }
+];
