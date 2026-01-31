@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { ArrowLeft, ArrowRight, Upload, FileText, Mic, CheckCircle2, AlertCircle, Shield } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Upload, FileText, Mic, CheckCircle2, AlertCircle, Shield, Gamepad2 } from 'lucide-react';
 import type { Job } from '@/lib/mockData';
 import { applicationQuestions, voicePrompt } from '@/lib/mockData';
 import { VoiceRecorder } from './VoiceRecorder';
 import { AIEvaluation } from './AIEvaluation';
+import { ProblemSolvingGame } from './ProblemSolvingGame';
 
 interface ApplicationFlowProps {
   job: Job;
@@ -13,10 +14,11 @@ interface ApplicationFlowProps {
   onBack: () => void;
 }
 
-type Step = 'cv' | 'questions' | 'voice' | 'evaluation' | 'complete';
+type Step = 'cv' | 'game' | 'questions' | 'voice' | 'evaluation' | 'complete';
 
 const steps: { id: Step; label: string; icon: React.ReactNode }[] = [
   { id: 'cv', label: 'Resume', icon: <Upload className="h-4 w-4" /> },
+  { id: 'game', label: 'Challenge', icon: <Gamepad2 className="h-4 w-4" /> },
   { id: 'questions', label: 'Questions', icon: <FileText className="h-4 w-4" /> },
   { id: 'voice', label: 'Voice Check', icon: <Mic className="h-4 w-4" /> },
   { id: 'evaluation', label: 'AI Review', icon: <CheckCircle2 className="h-4 w-4" /> },
@@ -29,6 +31,8 @@ export function ApplicationFlow({ job, onComplete, onBack }: ApplicationFlowProp
   const [voiceRecorded, setVoiceRecorded] = useState(false);
   const [isEvaluating, setIsEvaluating] = useState(false);
   const [evaluationComplete, setEvaluationComplete] = useState(false);
+  const [gameCompleted, setGameCompleted] = useState(false);
+  const [gameScore, setGameScore] = useState(0);
 
   const currentStepIndex = steps.findIndex(s => s.id === currentStep);
   const progress = ((currentStepIndex + 1) / steps.length) * 100;
@@ -61,6 +65,8 @@ export function ApplicationFlow({ job, onComplete, onBack }: ApplicationFlowProp
     switch (currentStep) {
       case 'cv':
         return true; // CV is optional
+      case 'game':
+        return gameCompleted;
       case 'questions':
         return Object.keys(answers).length >= 1;
       case 'voice':
@@ -68,6 +74,11 @@ export function ApplicationFlow({ job, onComplete, onBack }: ApplicationFlowProp
       default:
         return false;
     }
+  };
+
+  const handleGameComplete = (score: number, timeSpent: number) => {
+    setGameScore(score);
+    setGameCompleted(true);
   };
 
   return (
@@ -152,6 +163,13 @@ export function ApplicationFlow({ job, onComplete, onBack }: ApplicationFlowProp
                 </p>
               </div>
             </div>
+          )}
+
+          {currentStep === 'game' && (
+            <ProblemSolvingGame 
+              onComplete={handleGameComplete}
+              isCompleted={gameCompleted}
+            />
           )}
 
           {currentStep === 'questions' && (
