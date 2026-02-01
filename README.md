@@ -1,3 +1,5 @@
+## Prototype : https://talk-talent-scan.lovable.app
+
 # Space42 AI Talent Navigator
 
 An AI-powered Candidate Experience & Onboarding Agent designed for the Space42 Bounty Challenge 2026.
@@ -32,4 +34,4 @@ The solution evolves from a high-precision AI assessment engine into a human-cen
 ```bash
 npm install
 npm run dev
-## Prototype : https://talk-talent-scan.lovable.app
+
