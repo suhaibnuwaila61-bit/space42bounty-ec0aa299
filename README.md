@@ -32,4 +32,4 @@ The solution evolves from a high-precision AI assessment engine into a human-cen
 ```bash
 npm install
 npm run dev
-https://talk-talent-scan.lovable.app
+## Prototype : https://talk-talent-scan.lovable.app
