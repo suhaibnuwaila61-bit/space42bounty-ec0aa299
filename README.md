@@ -1,4 +1,4 @@
-## Prototype : https://talk-talent-scan.lovable.app
+## Prototype : [https://talk-talent-scan.lovable.app](https://space42bounty.lovable.app)
 
 # Space42 AI Talent Navigator
 
