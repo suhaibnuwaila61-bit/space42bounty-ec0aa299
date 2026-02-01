@@ -1,73 +1,35 @@
-# Welcome to your Lovable project
+# Space42 AI Talent Navigator
 
-## Project info
+An AI-powered Candidate Experience & Onboarding Agent designed for the Space42 Bounty Challenge 2026.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
+This project delivers a conversational AI “Digital Guide” that supports candidates and new hires across the full journey — from career exploration to early-stage onboarding — while reducing repetitive HR workload.
 
-## How can I edit this code?
+The solution evolves from a high-precision AI assessment engine into a human-centric navigator aligned with Space42’s mission and business units.
 
-There are several ways of editing your application.
+## Key Features
+- Conversational AI guide for candidates and new hires
+- Space42-specific knowledge (Bayanat + Yahsat, Space Services, Smart Solutions)
+- Skill-to-Mission Mapping using AI assessments
+- Lightweight onboarding guidance (Day 1 / Week 1)
+- Explainable AI recommendations
+- Enterprise-ready and scalable design
 
-**Use Lovable**
+## Technology
+- Frontend: Lovable (React-based)
+- AI: LLM-powered conversational agent
+- Knowledge grounding: Curated Space42 documentation
+- Deployment: Web-based (cloud or local)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## How It Works
+1. User selects their journey: Candidate or New Hire
+2. AI guide answers Space42-specific questions
+3. AI maps skills to Space42 business units
+4. New hires receive onboarding guidance
+5. HR workload is reduced through automated FAQs
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Running Locally
+```bash
+npm install
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+https://talk-talent-scan.lovable.app
